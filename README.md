@@ -62,7 +62,7 @@ Text normalization is the process of transforming text into a single canonical. 
 * Lemmatization
 * Spelling correctioin
 
-For futher details, see [CS506/606: Txt Nrmlztn](http://www.csee.ogi.edu/~sproatr/Courses/TextNorm/).
+For further details, see [CS506/606: Txt Nrmlztn](http://www.csee.ogi.edu/~sproatr/Courses/TextNorm/).
 
 #### Normalizing case
 
@@ -90,11 +90,20 @@ We can also lower text after tokenization:
 
 #### Stemming
 
-<!--
-Stemming  algorithms  work  by  removing the suffix of the word, according to some grammatical rules.  In this  study, we  apply  the Snowball  stemmer library2,  which  is  the  most  popular  and  standard approach. 
+Stemming is the process of reducing inflected words to their word stem. For example, "listen", "listened", "listening" are reduced to the same stem "listen". Some application like sentiment analysis can benefit from stemming because it reduces vocabulary and increase the relevance of the concept.
 
-2 http://snowball.tartarus.org/ 
--->
+For stemming, we can use `SnowballStemmer` in `nltk.stem.snowball`:
+
+```python
+>>> from nltk.stem.snowball import SnowballStemmer
+>>> st = SnowballStemmer('english')
+>>> st.stem('running')
+'run'
+>>> st.stem('greatly')
+'great'
+```
+
+There are other stemming algorithms in NLTK. For further information, see [nltk.stem package](http://www.nltk.org/api/nltk.stem.html).
 
 #### Lemmatization
 
