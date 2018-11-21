@@ -12,6 +12,7 @@ jupyter = "*"
 matplotlib = "*"
 nltk = "*"
 pandas = "*"
+textblob = "*"
 
 [requires]
 python_version = "3.6"

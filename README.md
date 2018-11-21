@@ -107,6 +107,28 @@ There are other stemming algorithms in NLTK. For further information, see [nltk.
 
 #### Lemmatization
 
+Lemmatization is the process of grouping together the inflected forms of a word so they can be analysed as a single item, identified by the word's lemma, or dictionary form. For example, "am", "are", "is" are lemmatized to the same form "be".
+
+For stemming, we can use `WordNetLemmatizer` in `nltk.stem.wordnet`. Before we use the lemmatizer, we should download WordNet:
+
+```python
+>>> import nltk
+>>> nltk.download('wordnet')
+```
+
+Now, we are ready to lemmatize word:
+
+```python
+>>> from nltk.stem.wordnet import WordNetLemmatizer
+>>> lt = WordNetLemmatizer()
+>>> lt.lemmatize('am', pos='v')
+'be'
+>>> lt.lemmatize('are', pos='v')
+'be'
+>>> lt.lemmatize('is', pos='v')
+'be'
+```
+
 #### Spelling correction
 
 ### Removal
