@@ -61,6 +61,7 @@ Text normalization is the process of transforming text into a single canonical. 
 * Stemming
 * Lemmatization
 * Spelling correctioin
+* Negation handling
 
 For further details, see [CS506/606: Txt Nrmlztn](http://www.csee.ogi.edu/~sproatr/Courses/TextNorm/).
 
