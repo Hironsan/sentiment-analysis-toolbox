@@ -6,16 +6,18 @@ Also, there are various methods such as SVM, Multinomial Naive Bayes, Convolutio
 ## Table of contents
 
 1. Basic Text Pre-processing
-* Casing characters
-* Replacing numbers
-* Punctuation removal
-* Stopwords removal
-* Frequent words removal
-* Rare words removal
-* Spelling correction
 * Tokenization
-* Stemming
-* Lemmatization
+* Normalization
+  * Casing characters
+  * Replacing numbers
+  * Stemming
+  * Lemmatization
+  * Spelling correction
+* Removal
+  * Punctuation removal
+  * Stopwords removal
+  * Frequent words removal
+  * Rare words removal
 
 ## Text Pre-processing
 
@@ -105,3 +107,12 @@ Stop words can be filtered by using `stopwords` in `nltk.corpus`:
 <!--
 http://www.cs.cmu.edu/~mccallum/bow/rainbow/ 
 -->
+
+## Reference
+
+* [Sentiment analysis of reviews: Text Pre-processing](https://medium.com/@annabiancajones/sentiment-analysis-of-reviews-text-pre-processing-6359343784fb)
+* [Ultimate guide to deal with Text Data (using Python) – for Data Scientists & Engineers](https://www.analyticsvidhya.com/blog/2018/02/the-different-methods-deal-text-data-predictive-python/)
+* [A Comparison between Preprocessing Techniques for Sentiment Analysis in Twitter](http://ceur-ws.org/Vol-1748/paper-06.pdf)
+* [Data Preprocessing, Sentiment Analysis & NER On Twitter Data.](http://www.iosrjournals.org/iosr-jce/papers/Conf.17014-2017/Volume-2/15.%2073-79.pdf?id=7557)
+* [The effect of preprocessing techniques on Twitter sentiment analysis](https://www.researchgate.net/publication/311755864_The_effect_of_preprocessing_techniques_on_Twitter_sentiment_analysis)
+* [Preprocessing text before use RNN](https://datascience.stackexchange.com/questions/11402/preprocessing-text-before-use-rnn)
