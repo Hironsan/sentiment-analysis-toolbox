@@ -12,6 +12,7 @@ Also, there are various methods such as SVM, Multinomial Naive Bayes, Convolutio
   * Stemming
   * Lemmatization
   * Spelling correction
+  * Negation handling
 * Removing meaningless words
   * Removing punctuation
   * Stopwords removal
@@ -149,6 +150,30 @@ TextBlob("corrected")
 If you want to build your own spelling corrector, below is the best choice to read:
 
 * [How to Write a Spelling Corrector](https://norvig.com/spell-correct.html)
+
+#### Negation handling
+
+Negation handling is the process of converting negation abbreviation to a canonical format. For example, "aren't" is converted to "are not". It is helpful for sentiment analysis. 
+
+For negation handling, we will use a dictionary as follows:
+
+```python
+>>> d = {
+"aren't" : "are not",
+"can't" : "cannot",
+"couldn't" : "could not",
+"didn't" : "did not",
+"doesn't" : "does not",
+"don't" : "do not"
+}
+>>> s = "We don't like this dish"
+>>> for w for d:
+      s = s.replace(w, d[w])
+```
+
+This is a naive implementation, so inefficient.
+
+You can download a dictionary from [here](https://drive.google.com/file/d/0B1yuv8YaUVlZZ1RzMFJmc1ZsQmM/view).
 
 ### Removing meaningless words
 
