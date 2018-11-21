@@ -9,12 +9,11 @@ Also, there are various methods such as SVM, Multinomial Naive Bayes, Convolutio
 * Tokenization
 * Text Normalization
   * Normalizing case
-  * Replacing numbers
   * Stemming
   * Lemmatization
   * Spelling correction
 * Removal
-  * Punctuation removal
+  * Removing punctuation
   * Stopwords removal
   * Frequent words removal
   * Rare words removal
@@ -57,7 +56,7 @@ For further detail, see [nltk.tokenize package](https://www.nltk.org/api/nltk.to
 Text normalization is the process of transforming text into a single canonical. Normalizing text before processing it ensure that these words are consistent. For example, converting character case or stemming words:
 
 * Normalizing case
-* Replacing numbers
+* Normalizing number
 * Stemming
 * Lemmatization
 * Spelling correctioin
@@ -86,7 +85,11 @@ We can also lower text after tokenization:
 ['the', 'da', 'vinci', 'code', 'was', 'really', 'good', '.']
 ```
 
-#### Replacing numbers
+<!--
+#### Normalizing number
+
+Normalizing number is the process of 
+-->
 
 #### Stemming
 
@@ -149,17 +152,32 @@ If you want to build your own spelling corrector, below is the best choice to re
 
 ### Removal
 
-* Filtering
-* Punctuation removal
+* Removing punctuation
 * Stopwords removal
 * Frequent words removal
 * Rare words removal
 
-<!--
-#### Filtering
+#### Removing punctuation
 
-Filtering is nothing but cleaning of raw data. In this step, URL links (E.g. http://twitter.com), special words in twitter (e.g. “RT” which means ReTweet), user names in twitter (e.g. @Ron -@symbol indicating a user name), emoticons are removed.
--->
+Removing punctuation is the process of removing punctuation characters in text. As punctuation may not have usuful information, removing punctuation will help us reduce the size of the training data.
+
+Python provides a constant punctuation by `string.punctuation`. For example:
+
+```python
+>>> import string
+>>> string.punctuation
+'!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~'
+```
+
+We can remove punctuation using `string.punctuation` and `translate` method:
+
+```python
+>>> translate_dict = dict((c, ' ') for c in string.punctuation)
+>>> translate_map = str.maketrans(translate_dict)
+>>> text = 'state-of-the-art'
+>>> text.translate(translate_map)
+'state of the art'
+```
 
 #### Stop words removal
 
@@ -188,6 +206,7 @@ http://www.cs.cmu.edu/~mccallum/bow/rainbow/
 
 * [Sentiment analysis of reviews: Text Pre-processing](https://medium.com/@annabiancajones/sentiment-analysis-of-reviews-text-pre-processing-6359343784fb)
 * [Ultimate guide to deal with Text Data (using Python) – for Data Scientists & Engineers](https://www.analyticsvidhya.com/blog/2018/02/the-different-methods-deal-text-data-predictive-python/)
+* [How to Clean Text for Machine Learning with Python](https://machinelearningmastery.com/clean-text-machine-learning-python/)
 * [A Comparison between Preprocessing Techniques for Sentiment Analysis in Twitter](http://ceur-ws.org/Vol-1748/paper-06.pdf)
 * [Data Preprocessing, Sentiment Analysis & NER On Twitter Data.](http://www.iosrjournals.org/iosr-jce/papers/Conf.17014-2017/Volume-2/15.%2073-79.pdf?id=7557)
 * [The effect of preprocessing techniques on Twitter sentiment analysis](https://www.researchgate.net/publication/311755864_The_effect_of_preprocessing_techniques_on_Twitter_sentiment_analysis)
