@@ -7,7 +7,7 @@ Also, there are various methods such as SVM, Multinomial Naive Bayes, Convolutio
 
 1. Basic Text Pre-processing
 * Tokenization
-* Normalization
+* Text Normalization
   * Casing characters
   * Replacing numbers
   * Stemming
@@ -52,9 +52,12 @@ NLTK has a tokenizer for tweets:
 
 For further detail, see [nltk.tokenize package](https://www.nltk.org/api/nltk.tokenize.html).
 
-### Normalization
+### Text Normalization
+
+Text normalization is the process of transforming text into a single canonical. Normalizing text before processing it ensure that these words are consistent. For example, converting character case or stemming words:
 
 * Casing characters
+* Replacing numbers
 * Stemming
 * Lemmatization
 * Spelling correctioin
