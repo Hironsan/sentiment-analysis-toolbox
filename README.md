@@ -12,7 +12,7 @@ Also, there are various methods such as SVM, Multinomial Naive Bayes, Convolutio
   * Stemming
   * Lemmatization
   * Spelling correction
-* Removal
+* Removing meaningless words
   * Removing punctuation
   * Stopwords removal
   * Frequent words removal
@@ -150,7 +150,7 @@ If you want to build your own spelling corrector, below is the best choice to re
 
 * [How to Write a Spelling Corrector](https://norvig.com/spell-correct.html)
 
-### Removal
+### Removing meaningless words
 
 * Removing punctuation
 * Stopwords removal
