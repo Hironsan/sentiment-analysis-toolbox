@@ -13,6 +13,7 @@ matplotlib = "*"
 nltk = "*"
 pandas = "*"
 textblob = "*"
+gensim = "*"
 
 [requires]
 python_version = "3.6"

@@ -131,6 +131,22 @@ Now, we are ready to lemmatize word:
 
 #### Spelling correction
 
+Spelling correction is the process of correcting spelling mistakes. In text processing, spelling correction is a useful pre-processing step because this reduces the vocabulary size. For example, "speling" and "spelling" will be treated as the same word after spelling correction.
+
+For spelling correction, we can use `TextBlob`:
+
+```python
+>>> from textblob import TextBlob
+>>> TextBlob('speling').correct()
+TextBlob("spelling")
+>>> TextBlob('korrectud').correct()
+TextBlob("corrected")
+```
+
+If you want to build your own spelling corrector, below is the best choice to read:
+
+* [How to Write a Spelling Corrector](https://norvig.com/spell-correct.html)
+
 ### Removal
 
 * Filtering
@@ -139,9 +155,9 @@ Now, we are ready to lemmatize word:
 * Frequent words removal
 * Rare words removal
 
+<!--
 #### Filtering
 
-<!--
 Filtering is nothing but cleaning of raw data. In this step, URL links (E.g. http://twitter.com), special words in twitter (e.g. “RT” which means ReTweet), user names in twitter (e.g. @Ron -@symbol indicating a user name), emoticons are removed.
 -->
 
