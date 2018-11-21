@@ -168,8 +168,11 @@ For negation handling, we will use a dictionary as follows:
 "don't" : "do not"
 }
 >>> s = "We don't like this dish"
->>> for w for d:
-      s = s.replace(w, d[w])
+>>> words = s.split()
+>>> words
+['We', "don't", 'like', 'this', 'dish']
+>>> ' '.join(d[w] if w in d else w for w in words)
+'We do not like this dish'
 ```
 
 This is a naive implementation, so inefficient.
