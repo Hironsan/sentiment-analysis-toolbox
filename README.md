@@ -40,10 +40,12 @@ NLTK has a tokenizer for tweets:
 >>> from nltk.tokenize import TweetTokenizer
 >>> s = '@remy: This is waaaaayyyy too much for you!!!!!!'
 >>> word_tokenize(s)
-['@', 'remy', ':', 'This', 'is', 'waaaaayyyy', 'too', 'much', 'for', 'you', '!', '!', '!', '!', '!', '!']
+['@', 'remy', ':', 'This', 'is', 'waaaaayyyy', 'too', 'much',
+ 'for', 'you', '!', '!', '!', '!', '!', '!']
 >>> t = TweetTokenizer(strip_handles=True, reduce_len=True)
 >>> t.tokenize(s)
-[':', 'This', 'is', 'waaayyy', 'too', 'much', 'for', 'you', '!', '!', '!']
+[':', 'This', 'is', 'waaayyy', 'too', 'much', 'for',
+ 'you', '!', '!', '!']
 ```
 
 For further detail, see [nltk.tokenize package](https://www.nltk.org/api/nltk.tokenize.html).
@@ -81,10 +83,25 @@ Stemming  algorithms  work  by  removing the suffix of the word, according to so
 
 Filtering is nothing but cleaning of raw data. In this step, URL links (E.g. http://twitter.com), special words in twitter (e.g. “RT” which means ReTweet), user names in twitter (e.g. @Ron -@symbol indicating a user name), emoticons are removed.
 
-#### Stopwords removal
+#### Stop words removal
 
-Articles such as “a”, “an”, “the” and other stop words such as “to”, “of”, “is”, “are”, “this”, “for “removed in this step.
+Stop words removal is the process of eliminating stop words from text. Stop words are words which are filtered out before or after processing of text. For example, "a", "the", "is", "of", etc... are stop words. Stop words are meaningless and useless for the sentiment analysis. This process reduces the corpus size.
 
-It is a technique that eliminates the  frequent  usage words  which are  meaningless  and useless  for  the  text  classification.  This  reduces  the corpus size without losing important information. The Rainbow list is used for our experiments.
+Stop words can be filtered by using `stopwords` in `nltk.corpus`:
 
-3 http://www.cs.cmu.edu/~mccallum/bow/rainbow/ 
+```python
+>>> from nltk.corpus import stopwords
+>>> from nltk.tokenize import word_tokenize
+>>> 
+>>> s = 'This is a fantastic movie!'
+>>> stop_words = stopwords.words('english')
+>>> words = word_tokenize(s)
+>>> words
+['This', 'is', 'a', 'fantastic', 'movie', '!']
+>>> [w for w in words if w not in stop_words]
+['This', 'fantastic', 'movie', '!']
+```
+
+<!--
+http://www.cs.cmu.edu/~mccallum/bow/rainbow/ 
+-->
