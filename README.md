@@ -8,7 +8,7 @@ Also, there are various methods such as SVM, Multinomial Naive Bayes, Convolutio
 1. Basic Text Pre-processing
 * Tokenization
 * Text Normalization
-  * Casing characters
+  * Normalizing case
   * Replacing numbers
   * Stemming
   * Lemmatization
@@ -56,21 +56,45 @@ For further detail, see [nltk.tokenize package](https://www.nltk.org/api/nltk.to
 
 Text normalization is the process of transforming text into a single canonical. Normalizing text before processing it ensure that these words are consistent. For example, converting character case or stemming words:
 
-* Casing characters
+* Normalizing case
 * Replacing numbers
 * Stemming
 * Lemmatization
 * Spelling correctioin
 
-#### Casing characters
+For futher details, see [CS506/606: Txt Nrmlztn](http://www.csee.ogi.edu/~sproatr/Courses/TextNorm/).
+
+#### Normalizing case
+
+Normalizing case is the process of transforming characters into the same case. This process ensures that the same words are recognised as the same. In this case we transformed into lowercase:
+
+```python
+>>> s = 'The Da Vinci Code was REALLY good.'
+>>> s.lower()
+'the da vinci code was really good.'
+```
+
+We can also lower text after tokenization:
+
+```python
+>>> from nltk.tokenize import word_tokenize
+>>> s = 'The Da Vinci Code was REALLY good.'
+>>> words = word_tokenize(s)
+>>> words
+['The', 'Da', 'Vinci', 'Code', 'was', 'REALLY', 'good', '.']
+>>> [w.lower() for w in words]
+['the', 'da', 'vinci', 'code', 'was', 'really', 'good', '.']
+```
 
 #### Replacing numbers
 
 #### Stemming
 
+<!--
 Stemming  algorithms  work  by  removing the suffix of the word, according to some grammatical rules.  In this  study, we  apply  the Snowball  stemmer library2,  which  is  the  most  popular  and  standard approach. 
 
 2 http://snowball.tartarus.org/ 
+-->
 
 #### Lemmatization
 
@@ -86,7 +110,9 @@ Stemming  algorithms  work  by  removing the suffix of the word, according to so
 
 #### Filtering
 
+<!--
 Filtering is nothing but cleaning of raw data. In this step, URL links (E.g. http://twitter.com), special words in twitter (e.g. “RT” which means ReTweet), user names in twitter (e.g. @Ron -@symbol indicating a user name), emoticons are removed.
+-->
 
 #### Stop words removal
 
